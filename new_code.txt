@@ -1,0 +1,17 @@
+library(readxl) 
+data_list <- import_list("C:/Users/ADOOR PRABHA/Desktop/recent_sheets.xlsx", setclass = "tbl")
+t<-excel_sheets("C:/Users/ADOOR PRABHA/Desktop/recent_sheets.xlsx")
+for(i in 1:length(t))
+{
+
+  j=2
+  for(j in 1:ncol(data_list[[i]]))
+  {
+    v<-data_list[[i]][[1]]
+    q<-data_list[[i]][[j]]
+    w<-intersect(v,q)
+    print(w)
+  
+  }
+ 
+}
